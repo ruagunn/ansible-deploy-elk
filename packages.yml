@@ -1,0 +1,5 @@
+- hosts: localhost
+  become: true
+  roles:
+  - { role: packages, tags: ["packages"] }
+  - { role: docker, tags: ["docker"] }

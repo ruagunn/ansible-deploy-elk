@@ -1,0 +1,35 @@
+log_driver: "json-file"
+log_max_size: "10m"
+log_max_file: "3"
+
+server_name: localhost
+network_name: esnet
+
+elasticsearch_image: docker.elastic.co/elasticsearch/elasticsearch:7.15.1
+elasticsearch_hostname: es01
+elasticsearch_conf_dir: /usr/share/elasticsearch
+
+kibana_image: docker.elastic.co/kibana/kibana:7.15.1
+kibana_hostname: ki01
+
+logstash_image: docker.elastic.co/logstash/logstash:7.15.1
+logstash_hostname: lo01
+logstash_conf_dir: /usr/share/logstash
+
+heartbeat_image: docker.elastic.co/beats/heartbeat:7.15.1
+heartbeat_hostname: hb01
+heartbeat_servername: status.example.com
+heartbeat_conf_dir: /usr/share/heartbeat
+heartbeat_urls:
+- https://example.com
+- https://status.example.com
+
+metricbeat_image: docker.elastic.co/beats/metricbeat:7.15.1
+metricbeat_hostname: mb01
+metricbeat_servername: status.example.com
+metricbeat_conf_dir: /usr/share/metricbeat
+
+filebeat_image: docker.elastic.co/beats/filebeat:7.15.1
+filebeat_hostname: fb01
+filebeat_servername: status.example.com
+filebeat_conf_dir: /usr/share/filebeat
