@@ -19,27 +19,6 @@ pipeline {
                 '''
             }
         }
-        stage('Functional Test') {
-            steps {
-                sh '''#!/bin/bash
-                    py.test-3 -v tests/functional/test_functional.py
-                '''
-            }
-        }
-        stage('Integration Test') {
-            steps {
-                sh '''#!/bin/bash
-                    py.test-3 -v tests/integration/test_integration.py
-                '''
-            }
-        }
-        stage('Performance Test') {
-            steps {
-                sh '''#!/bin/bash
-                    py.test-3 -v tests/performance/test_performance.py
-                '''
-            }
-        }
         stage('SonarQube Static Code Analysis') {
             steps {
                 
